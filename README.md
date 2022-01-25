@@ -1,2 +1,2 @@
 # Maulik_Leetcode
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub).
+This is for me to keep record of the problems that i did. Only used for educational purposes i do not acknowledge cheating.
