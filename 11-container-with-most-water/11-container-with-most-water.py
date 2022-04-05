@@ -5,6 +5,7 @@ class Solution(object):
         water_amount = 0 
         while i<j:
             store = max(water_amount,  (j-i)*min(height[i],height[j]))
+            #here j-i represents hte width and min(i,j) is the hieght 
             water_amount = max(water_amount,store)
             if(height[i] < height[j]):
                 i +=1
