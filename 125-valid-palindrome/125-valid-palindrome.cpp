@@ -1,17 +1,17 @@
 class Solution
 {
 private:
-    bool valid(char ch){
-        if((ch >= 'a' && ch<= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9')){
+    bool isValid(char ch){
+        if( (ch>='a' && ch<='z') || (ch>='A' && ch<='Z') || (ch>='0' && ch<='9') ){
             return 1;
         }
         return 0;
     }
     
-    char tolowerCase(char ch)
-    {
-        if ((ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9'))
+    char tolower(char ch){
+        if( (ch>='a' && ch<='z') ||  (ch>='0' && ch<='9') ){
             return ch;
+        }
         else
         {
             char temp = ch - 'A' + 'a';
@@ -19,13 +19,13 @@ private:
         }
     }
     
-    bool checkPalindrome(string a)
+    bool checkpali(string a)
     {
         int s = 0;
         int e = a.length() - 1;
-        while (s <= e)
+        while(s<=e)
         {
-            if (a[s] != a[e])
+            if(a[s] != a[e])
                 return 0;
             else
             {
@@ -37,21 +37,20 @@ private:
     }
     
 public:
-    bool isPalindrome(string str)
-    {
-        // unnecessary characters
+    bool isPalindrome(string str){
+        
         string temp = "";
-        for(int j = 0; j<str.length(); j++){
-            if(valid(str[j])){
+        for(int j=0; j<str.length(); j++){
+            if(isValid(str[j])){
                 temp.push_back(str[j]);
             }
         }
         
-        // lowercase
-        for(int j = 0; j<temp.length(); j++){
-            temp[j] = tolowerCase(temp[j]);
+        for(int j=0; j<temp.length();j++){
+            temp[j] = tolower(temp[j]);
         }
         
-        return checkPalindrome(temp);
+        return checkpali(temp);
+        
     }
 };
