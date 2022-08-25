@@ -6,8 +6,8 @@ public:
         if(size_a>size_b) return false;
         unordered_map<char, int> ransom;
         unordered_map<char, int> magazine;
-        for(auto it:a) ransom[it]++;
-        for(auto it:b) magazine[it]++;
+        for(auto i:a) ransom[i]++;
+        for(auto j:b) magazine[j]++;
         for(auto it:ransom){
             if(magazine[it.first] < it.second){
                 return false;
