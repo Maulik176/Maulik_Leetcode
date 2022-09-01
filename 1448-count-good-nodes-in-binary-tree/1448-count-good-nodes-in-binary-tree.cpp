@@ -11,19 +11,17 @@
  */
 class Solution {
 public:
-    int count = 0;
-    void solve(TreeNode* root, int max_node){
+    int cnt=0;
+    void solve(TreeNode* root,  int m){
         if(root == NULL) return;
-        if(root->val >= max_node){
-            count++;
-        }
-        max_node = max(max_node, root->val);
-        solve(root->left, max_node);
-        solve(root->right, max_node);
+        if(root->val >= m) cnt++;
+        m = max(m,root->val);
+        solve(root->left, m);
+        solve(root->right, m);
     }
     int goodNodes(TreeNode* root) {
         if(root == NULL) return 0;
-        solve(root,root->val);
-        return count;   
+        solve(root, root->val);
+        return cnt;
     }
 };
