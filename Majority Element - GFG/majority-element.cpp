@@ -12,15 +12,27 @@ class Solution{
   public:
     int majorityElement(int a[], int N)
     {
-        unordered_map<long long int,long long int> mp;
-        for(long long int i=0;i<N;i++){
-            mp[a[i]]++;
-        }
-        for(auto it:mp){
-            if(it.second > N/2){
-                return it.first;
+        int count=0;
+        int element;
+        for(int i=0;i<N;i++){
+            if(count ==0){
+                count++;
+                element = a[i];
+            }
+            else if(a[i] == element){
+                count++;
+            }
+            else{
+                count--;
             }
         }
+        int cnt1=0;
+        for(int i=0;i<N;i++){
+            if(a[i] == element){
+                cnt1++;
+            }
+        }
+        if(cnt1 > N/2) return element;
         return -1;
     }
 };
